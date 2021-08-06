@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:divider="@drawable/divider"
+    android:showDividers="middle"
+    android:padding="10dp"
+    android:background="#B0EFEDED">
+<TextView
+    android:id="@+id/Time"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="11:00AM - 12:00PM"
+    android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meeting Description"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+</LinearLayout>
