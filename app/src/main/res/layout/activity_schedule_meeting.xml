@@ -60,7 +60,8 @@
         android:gravity="left"
         android:textColor="#757171"
         android:backgroundTint="#B0EFEDED"
-        android:text="Meeting Date"
+        android:textColorHint="#757171"
+        android:hint="Meeting Date"
         app:iconTint="#757171"
         app:icon="@drawable/ic_baseline_arrow_drop_down_24"
         app:iconGravity="end"/>
@@ -74,11 +75,12 @@
         app:cornerRadius="5dp"
         android:backgroundTint="#B0EFEDED"
         android:gravity="left"
+        android:textColorHint="#757171"
         android:textColor="#757171"
         app:icon="@drawable/ic_baseline_arrow_drop_down_24"
         app:iconGravity="end"
         app:iconTint="#757171"
-        android:text="Start Time"/>
+        android:hint="Start Time"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/end_time"
@@ -90,10 +92,12 @@
         android:backgroundTint="#B0EFEDED"
         android:gravity="left"
         android:textColor="#757171"
+        android:textColorHint="#757171"
         app:iconTint="#757171"
         app:icon="@drawable/ic_baseline_arrow_drop_down_24"
         app:iconGravity="end"
-        android:text="End Time"/>
+        android:hint="End Time"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/description"

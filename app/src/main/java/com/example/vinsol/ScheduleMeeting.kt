@@ -14,12 +14,11 @@ import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class ScheduleMeeting : AppCompatActivity() {
 
-    private var slots = ArrayList<Date>()
+
     val sdf = SimpleDateFormat("HH:mm")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,8 +36,8 @@ class ScheduleMeeting : AppCompatActivity() {
         endTime.setOnClickListener(TimePicker(endTime))
         val scheduleMeetingBtn = findViewById<Button>(R.id.schedule_meeting)
         scheduleMeetingBtn.setOnClickListener {
-            if (!startTime.text.isNullOrEmpty() || !endTime.text.isNullOrEmpty()) {
-                Toast.makeText(this, "Please Enter time", Toast.LENGTH_LONG).show()
+            if (startTime.text.toString().isEmpty() || endTime.text.toString().isEmpty() || date.text.toString().isEmpty()) {
+                Toast.makeText(this, "Please Enter date and time", Toast.LENGTH_LONG).show()
             } else {
                 val st = sdf.parse(startTime.text.toString())
                 val et = sdf.parse(endTime.text.toString())
@@ -52,12 +51,10 @@ class ScheduleMeeting : AppCompatActivity() {
 
     private fun TimePicker(Time: Button): (v: View) -> Unit =
         {
-            // Get Current Time
             val c: Calendar = Calendar.getInstance()
             val mHour = c.get(Calendar.HOUR_OF_DAY)
             val mMinute = c.get(Calendar.MINUTE)
 
-            // Launch Time Picker Dialog
             val timePickerDialog = TimePickerDialog(
                 this,
                 { view, hourOfDay, minute -> Time.setText("$hourOfDay:$minute") },
